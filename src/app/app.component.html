@@ -1,0 +1,15 @@
+<h1>User List</h1>
+<input type="text" [(ngModel)]="userIds" placeholder="Enter user IDs (comma-separated)" />
+<button (click)="fetchUsers()">Fetch Users</button>
+
+<ul>
+  <li *ngFor="let user of users" (click)="getUser(user.id)">
+    {{ user.name }} ({{ user.username }})
+  </li>
+</ul>
+
+<div *ngIf="selectedUser">
+  <h2>Selected User</h2>
+  <p>Name: {{ selectedUser.name }}</p>
+  <p>Email: {{ selectedUser.email }}</p>
+</div>
