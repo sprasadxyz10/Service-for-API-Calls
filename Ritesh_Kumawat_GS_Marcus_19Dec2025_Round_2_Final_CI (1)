@@ -1,0 +1,85 @@
+Team: Marcus (GS)
+
+Interviewer: Karn, Sami W
+
+Date: 19/12/2025 (18:00 - 18:30)
+
+Round : 2 (Final CI)
+
+
+Question 1:
+
+You have a banking payment application that needs to be deployed across multiple geographic regions. How would you design this application architecture on AWS to ensure high availability, scalability, security, and compliance? Provide a detailed diagram of the architecture and explain the key components and their roles.
+
+
+
+Answer 1: 
+
+
+I approached the design by first ensuring global availability and low latency. The idea was to deploy the application in multiple regions, so users connect to the nearest region for faster response. At the entry point, I used DNS-based routing (like Route 53) to direct traffic to the closest healthy region.
+
+Inside each region, I set up load balancers to distribute traffic across multiple application instances for scalability and fault tolerance. The services were deployed in private networks for security, and each region had its own database. For consistency, I used a primary database in one region and replicated data to other regions for disaster recovery and read performance.
+
+Security was handled with encryption, firewalls, and strict access controls. I also added health checks and failover mechanisms so if one region goes down, traffic automatically shifts to another.
+
+
+
+Question 2: What data you should not have in DBs?
+
+Answer 2: 
+
+	Full Card Details (PAN, CVV, Expiry)
+
+	Plaintext Passwords
+
+	Sensitive Personally Identifiable Information (PII)
+	Examples: Aadhaar, SSN, passport numbers.
+
+	Unencrypted Secrets or API Keys
+
+	Session Tokens or JWTs (Long-term)
+
+	CVV or PIN
+
+
+
+Question 3: How should the control will flow ? 
+
+Answer 3: 
+
+Client Request → Global Routing
+
+User initiates a payment request.
+	DNS-based routing (Route 53) , request to the nearest healthy region
+
+Regional Entry Point
+	Request hits API Gateway (for APIs) 
+
+Service Layer
+
+	API Gateway or ALB forwards the request to application services running on ECS/EKS
+	Services validate the request, apply business logic.
+
+Data Layer
+
+For financial transactions:
+
+	Aurora Global Database handles writes in the primary region for ACID consistency.
+	Other regions use read replicas for low-latency reads.
+
+
+Response
+
+	Application processes the payment, updates DB, and returns a response to the client.
+	Logs and audit data are streamed to S3 (Object Lock) for compliance and reconciliation.
+
+
+
+Question 4: what if A depends on B, B depends on C, but C fails during the transaction ?
+
+Answer 4: Explained Saga Pattern in Detail.
+
+
+
+
+

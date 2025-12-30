@@ -1,0 +1,59 @@
+Sandeep Shukla
+-----------------
+	Explain your project architecture.
+	What is a microservice, and what are its key characteristics?
+	Is REST communication stateful or stateless?
+	If stateful communication is required, how should it be implemented?
+	Which API Gateway have you used, and where was it deployed/hosted?
+	What are the primary responsibilities of an API Gateway?
+	How do you authenticate a user in your system?
+	How do you handle authorization?
+	When should you use synchronous communication, and when is asynchronous communication more appropriate?
+	Difference between API Gateway and service mesh
+	Explain Circuit Breaker. 
+		How did you implement this in your previous project?
+		What is Half-opened / Half-closed state?
+		Where are Circuit Breaker configurations defined? Are they placed in the main Spring properties file or in a separate configuration file for resilience settings?
+	How do you handle environment-specific configuration differences across dev, QA, and production?
+		How to run a Spring Boot application with externalized configuration?
+	Are Java String objects mutable? 
+		What is the reason behind making String immutable in Java?
+		If we have String a = "Sandeep" and later update it to a = "Shukla", what exactly happens behind the scenes?
+		Even though the variable a changes from "Sandeep" to "Shukla", why is the String class still called immutable?
+		If a Person object is mutable, does that mean the String field storing the person's name is also mutable? What are your thoughts?
+	In which scenarios should we prefer creating immutable objects, and what kinds of objects are good candidates for immutability?	
+
+Bhaskar Tomar & Manoj Bisht
+----------------------------
+	CODERPAD QUES
+		Given two sorted arrays. Find the median.
+		Given a String of logs. Return a string of Frequently accessed IP address(es)
+	AWS
+		What is EC2?
+		Difference between ECS and EC2
+		Difference between IAM Policy and IAM rules
+		Different types of buckets available in AWS 
+	JAVA & SPRINGBOOT
+		Why do we use Stream API?
+		How Stream API is different from for loop?
+		What are Parallel streams? When not to use them?
+		Difference between map and flatmap. Give examples.
+		Difference between groupingBy and partitioningBy
+		Given an Employee class. Count the no. of employees based on the department using Stream API.
+		Which import statement is required for using Collectors (package)?
+		What is Dependency Injection?
+		What do you mean by Auto-Configuration?
+		Interceptor and Fliter. When to use what?
+		What is Reactive Programming (Spring WebFlux)?
+		Can you explain how authentication and authorization were implemented in your previous project? Please walk me through the complete request flow and mention the key HTTP status codes involved.
+		Difference between Junit and Mockito
+		Difference between @Mock and @Spy
+	DATABASE
+		Difference between SQL and NOSQL
+		What are indexes? On which columns indexes should be created?
+	CICD
+		What are stages in a CICD pipeline?
+		Can you explain how it was implemented in your previous project?
+	JIRA
+		What are Story points?
+		What do you mean by backlogs? Explain Sprint backlog.

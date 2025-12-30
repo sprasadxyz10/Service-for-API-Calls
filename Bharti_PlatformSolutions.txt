@@ -1,0 +1,11 @@
+Client Screening
+Interviewers: Sindhuja Dorai & Aman Chopra
+Duration : 35 mins
+
+I was asked to introduce myself.
+Q1. Given singly linked list and a int n, remove nth node from the end of the list
+    e.g. LIST - 1 2 3 4 5; int n=2
+		 Output 1 2 3 5
+
+Q2. How did you improve performance of the microservices you developed. 
+Q3. How did you reduce the latency of the API.
